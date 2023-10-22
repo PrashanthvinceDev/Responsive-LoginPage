@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap');
+/* hover color #147efb */
+/* asteric sign => universal operator */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+}
+body{
+    font-family: 'Sometype Mono', monospace;
+    /* color: #FFFFFF; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    &:after{
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-color: #000814;
+        height: 100vh;
+        width: 60%;
+        clip-path: polygon(0 100%, 0 0, 100% 0, 70% 100%);
+        z-index: -1;
+    }
+}
+.login-container{
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 50px -30px white;
+    width: 1200px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+/* Column 1 */
+.column{
+    padding: 64px;
+    /* We are using to these styles to the last child  */
+    &:last-child{
+        background: url(./sun-tornado.png) center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        flex-direction: column;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, white #ffffff82);
+        inset: 1;
+    }
+    &:last-child{
+        text-align: center;
+    }
+}
+/* column 2 sign up button  */
+.sign-up {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: 2px solid #000814;
+    color: #000814;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .3s;
+    text-decoration: none;
+}
+.sign-up:hover{
+    background-color: #000814;
+    color: #FFFFFF;
+}
+/* H1  */
+h1{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+}
+.main-p{
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+/* Form section */
+form{
+    margin-top: 48px;
+
+    &>* {
+        margin-top: 16px;
+    }
+    
+}
+/* form element */
+.input-element {
+    width: 100%;
+    border: none;
+    background: #f1f1f1;
+    padding: 20px 30px;
+    font-size: 18px;
+    transition: box-shadow .2s;
+    border-radius: 50px;
+}
+.input-element:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #000814;
+}
+input[type=checkbox] {
+    accent-color: #147efb;
+    width: 16px;
+    height: 16px;
+}
+/* Check box */
+.form-checkbox-items {
+    display: flex;
+    align-items: center;
+    gap: 11.2px;
+    margin-left: 5px;
+}
+
+/* Button section */
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    background-color: #000814;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all .2s;
+}
+button:active {
+    scale: .95;
+    background-color: darken(#343A40, 100%);
+}
+button:hover {
+    background: #000814;
+    color: #FFFFFF;
+}
+
+/* social icons */
+.social-icons{
+    display: flex;
+    gap: 16px;
+}
+.social-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: all .3s;
+}
+.social-icons a.facebook{
+    background-color: #3b5998;
+}
+a.twitter{
+    background-color: #55acee;
+}
+a.github{
+    background-color: #111;
+}
+.social-icons a:hover{
+    scale: 1.1;
+}
+
+/* Responsive  */
+
+@media (max-width:992px) {
+    .login-container{
+        display: block;
+        width: 500px;
+        text-align: center;
+
+    }
+    .flex{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .column {
+        &:last-child{
+            display: none;
+        }
+    }
+    .social-icons{
+        justify-content: center;
+    }
+}
